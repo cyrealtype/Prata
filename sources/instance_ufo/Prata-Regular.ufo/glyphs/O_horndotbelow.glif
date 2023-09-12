@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Ohorndotbelow" format="2">
+  <advance width="862"/>
+  <unicode hex="1EE2"/>
+  <anchor x="428" y="-21" name="bottom"/>
+  <anchor x="431" y="400" name="center"/>
+  <anchor x="776" y="10" name="ogonek"/>
+  <anchor x="431" y="800" name="top"/>
+  <anchor x="20" y="800" name="topleft"/>
+  <anchor x="684" y="783" name="topright"/>
+  <outline>
+    <component base="Ohorn"/>
+    <component base="dotbelowcomb" xOffset="319" yOffset="-21"/>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.ComponentInfo</key>
+      <array>
+        <dict>
+          <key>alignment</key>
+          <integer>-1</integer>
+          <key>index</key>
+          <integer>1</integer>
+          <key>name</key>
+          <string>dotbelowcomb</string>
+        </dict>
+      </array>
+    </dict>
+  </lib>
+</glyph>

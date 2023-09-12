@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="ghestroke-cy.loclBSH" format="2">
+  <advance width="500"/>
+  <anchor x="237" y="0" name="bottomright"/>
+  <anchor x="247" y="518" name="top"/>
+  <outline>
+    <component base="ghestroke-cy"/>
+  </outline>
+</glyph>

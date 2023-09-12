@@ -1,0 +1,125 @@
+# Prefix: Languagesystems
+# automatic
+languagesystem DFLT dflt;
+
+languagesystem latn dflt;
+
+languagesystem cyrl dflt;
+languagesystem cyrl BSH;
+languagesystem cyrl CHU;
+
+
+feature aalt {
+# automatic
+feature locl;
+feature sups;
+feature frac;
+feature ordn;
+feature case;
+
+} aalt;
+
+feature ccmp {
+# automatic
+lookup ccmp_Other_1 {
+	@CombiningTopAccents = [acutecomb brevecomb caroncomb circumflexcomb dieresiscomb gravecomb hookabovecomb hungarumlautcomb macroncomb ringcomb tildecomb];
+	lookupflag UseMarkFilteringSet @CombiningTopAccents;
+	sub i' @CombiningTopAccents by idotless;
+} ccmp_Other_1;
+
+lookup ccmp_latn_1 {
+	lookupflag 0;
+	sub brevecomb acutecomb by brevecomb_acutecomb;
+	sub brevecomb gravecomb by brevecomb_gravecomb;
+	sub brevecomb hookabovecomb by brevecomb_hookabovecomb;
+	sub brevecomb tildecomb by brevecomb_tildecomb;
+	sub circumflexcomb acutecomb by circumflexcomb_acutecomb;
+	sub circumflexcomb gravecomb by circumflexcomb_gravecomb;
+	sub circumflexcomb hookabovecomb by circumflexcomb_hookabovecomb;
+	sub circumflexcomb tildecomb by circumflexcomb_tildecomb;
+} ccmp_latn_1;
+
+script latn;
+lookup ccmp_latn_1;
+
+} ccmp;
+
+feature locl {
+# automatic
+script cyrl;
+language BSH;
+lookup locl_cyrl_0 {
+	sub Ghestroke-cy by Ghestroke-cy.loclBSH;
+	sub Zedescender-cy by Zedescender-cy.loclBSH;
+	sub Esdescender-cy by Esdescender-cy.loclBSH;
+	sub ghestroke-cy by ghestroke-cy.loclBSH;
+	sub zedescender-cy by zedescender-cy.loclBSH;
+	sub esdescender-cy by esdescender-cy.loclBSH;
+} locl_cyrl_0;
+
+script cyrl;
+language CHU;
+lookup locl_cyrl_1 {
+	sub Esdescender-cy by Esdescender-cy.loclCHU;
+	sub esdescender-cy by esdescender-cy.loclCHU;
+} locl_cyrl_1;
+
+} locl;
+
+feature sups {
+# automatic
+sub one by onesuperior;
+sub two by twosuperior;
+sub three by threesuperior;
+sub four by foursuperior;
+
+} sups;
+
+feature frac {
+# automatic
+sub one slash four by onequarter;
+sub one slash two by onehalf;
+sub three slash four by threequarters;
+
+} frac;
+
+feature ordn {
+# automatic
+sub [zero one two three four five six seven eight nine] [A a]' by ordfeminine;
+sub [zero one two three four five six seven eight nine] [O o]' by ordmasculine;
+
+} ordn;
+
+feature case {
+# automatic
+sub brevecomb-cy by brevecomb-cy.case;
+sub descender-cy by descender-cy.case;
+sub verticalbar-cy by verticalbar-cy.case;
+sub dieresiscomb by dieresiscomb.case;
+sub gravecomb by gravecomb.case;
+sub acutecomb by acutecomb.case;
+sub hungarumlautcomb by hungarumlautcomb.case;
+sub circumflexcomb by circumflexcomb.case;
+sub circumflexcomb_gravecomb by circumflexcomb_gravecomb.case;
+sub circumflexcomb_acutecomb by circumflexcomb_acutecomb.case;
+sub circumflexcomb_tildecomb by circumflexcomb_tildecomb.case;
+sub circumflexcomb_hookabovecomb by circumflexcomb_hookabovecomb.case;
+sub caroncomb by caroncomb.case;
+sub brevecomb_gravecomb by brevecomb_gravecomb.case;
+sub brevecomb_acutecomb by brevecomb_acutecomb.case;
+sub brevecomb_tildecomb by brevecomb_tildecomb.case;
+sub brevecomb_hookabovecomb by brevecomb_hookabovecomb.case;
+sub ringcomb by ringcomb.case;
+sub tildecomb by tildecomb.case;
+
+} case;
+
+feature dlig {
+# automatic
+lookupflag IgnoreMarks;
+sub AE by Aie-cy;
+sub En-cy Ge-cy by Enghe-cy;
+sub ae by aie-cy;
+sub en-cy ge-cy by enghe-cy;
+
+} dlig;

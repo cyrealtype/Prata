@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Iigrave-cy" format="2">
+  <advance width="865"/>
+  <unicode hex="040D"/>
+  <anchor x="421" y="993" name="top"/>
+  <outline>
+    <component base="Ii-cy"/>
+    <component base="gravecomb.case" xOffset="290" yOffset="40"/>
+  </outline>
+</glyph>

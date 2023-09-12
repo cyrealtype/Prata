@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="caroncomb.case" format="2">
+  <outline>
+    <contour>
+      <point x="143" y="822" type="line"/>
+      <point x="202" y="822" type="line"/>
+      <point x="330" y="943" type="line"/>
+      <point x="320" y="959" type="line"/>
+      <point x="172" y="890" type="line"/>
+      <point x="25" y="959" type="line"/>
+      <point x="16" y="943" type="line"/>
+    </contour>
+  </outline>
+  <lib>
+    <dict>
+      <key>com.schriftgestaltung.Glyphs.originalWidth</key>
+      <integer>345</integer>
+    </dict>
+  </lib>
+</glyph>

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<glyph name="Uhungarumlaut-cy" format="2">
+  <advance width="727"/>
+  <unicode hex="04F2"/>
+  <anchor x="397" y="800" name="top"/>
+  <outline>
+    <contour>
+      <point x="226" y="842" type="line"/>
+      <point x="403" y="927" type="line"/>
+      <point x="413" y="930"/>
+      <point x="422" y="940"/>
+      <point x="426" y="951" type="curve" smooth="yes"/>
+      <point x="433" y="972"/>
+      <point x="422" y="995"/>
+      <point x="403" y="1002" type="curve" smooth="yes"/>
+      <point x="387" y="1008"/>
+      <point x="371" y="1003"/>
+      <point x="359" y="993" type="curve" smooth="yes"/>
+      <point x="217" y="857" type="line"/>
+    </contour>
+    <contour>
+      <point x="399" y="851" type="line"/>
+      <point x="583" y="920" type="line"/>
+      <point x="593" y="922"/>
+      <point x="603" y="931"/>
+      <point x="608" y="942" type="curve" smooth="yes"/>
+      <point x="617" y="962"/>
+      <point x="608" y="986"/>
+      <point x="589" y="995" type="curve" smooth="yes"/>
+      <point x="574" y="1002"/>
+      <point x="557" y="999"/>
+      <point x="545" y="989" type="curve" smooth="yes"/>
+      <point x="391" y="866" type="line"/>
+    </contour>
+    <component base="U-cy"/>
+  </outline>
+</glyph>

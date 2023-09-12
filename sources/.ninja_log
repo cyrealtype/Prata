@@ -1,0 +1,13 @@
+# ninja log v5
+0	652	1694525848958309000	master_ufo/Prata-Regular.designspace	119383bb86f9903f
+0	652	1694525848958309000	master_ufo/Prata-Regular.ufo	119383bb86f9903f
+652	1187	1694525849520941000	instance_ufo/Prata-Regular.ufo	4371456b66619116
+1187	2272	1694525850608589393	../fonts/ttf/Prata-Regular.ttf	a83a7e29db45c658
+1187	3310	1694525851639942931	../fonts/otf/Prata-Regular.otf	c5d90ee07d1020da
+0	536	1694536242309697000	instance_ufo/Prata-Regular.ufo	4371456b66619116
+536	1565	1694536243368691031	../fonts/ttf/Prata-Regular.ttf	a83a7e29db45c658
+536	2518	1694536244318969207	../fonts/otf/Prata-Regular.otf	c5d90ee07d1020da
+2519	3866	1694536245697250651	../fonts/otf/Prata-Regular.otf.fixstamp	8af1046d79612fa5
+1566	5769	1694536247600597397	../fonts/ttf/Prata-Regular.ttf.autohintstamp	2f9830a2d89f3509
+5769	6293	1694536248123977592	../fonts/ttf/Prata-Regular.ttf.fixstamp	40312e5c3b3eaad4
+6293	7174	1694536248998560935	../fonts/webfonts/Prata-Regular.woff2	65136ddb8fd83d39

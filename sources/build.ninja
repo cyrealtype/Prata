@@ -1,0 +1,70 @@
+# Rules
+
+# Convert glyphs file to UFO
+rule glyphs2ufo
+  command = fontmake -o ufo --instance-dir instance_ufo -g $in
+# Build a set of instance UFOs from Designspace
+rule instanceufo
+  command = fontmake -i -o ufo -m $in $fontmake_args
+# Build a TTF file from a UFO
+rule buildttf
+  command = fontmake -o ttf -u $in $fontmake_args --output-path $out
+# Build an OTF file from a UFO
+rule buildotf
+  command = fontmake -o otf -u $in $fontmake_args --output-path $out
+# Add a STAT table to a set of variable fonts
+rule genstat
+  command = gftools-gen-stat --inplace $other_args -- $in  && touch $stampfile
+# Run the font fixer in-place and touch a stamp file
+rule fix
+  command = gftools-fix-font -o $in $fixargs $in && touch $in.fixstamp
+# Run the ttfautohint in-place and touch a stamp file
+rule autohint
+  command = ttfautohint $in $in.autohinted && mv $in.autohinted $in && $
+      touch $in.autohintstamp
+# Create a web font
+rule webfont
+  command = fonttools ttLib.woff2 compress -o $out $in
+
+# Convert glyphs source to designspace
+build master_ufo/Prata-Regular.designspace master_ufo/Prata-Regular.ufo: $
+    glyphs2ufo Prata.glyphs
+
+
+# STATIC FONTS
+
+#   Interpolate UFOs for Prata-Regular.designspace
+build master_ufo/../instance_ufo/Prata-Regular.ufo: instanceufo $
+    master_ufo/Prata-Regular.designspace
+
+# Build otf format
+
+#  master_ufo/Prata-Regular.designspace
+build ../fonts/otf/Prata-Regular.otf: buildotf $
+    master_ufo/../instance_ufo/Prata-Regular.ufo
+  fontmake_args = --filter ... --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter --output-path $
+      ../fonts/otf/Prata-Regular.otf
+
+# Post-processing otfs
+build ../fonts/otf/Prata-Regular.otf.fixstamp: fix $
+    ../fonts/otf/Prata-Regular.otf
+
+# Build ttf format
+
+#  master_ufo/Prata-Regular.designspace
+build ../fonts/ttf/Prata-Regular.ttf: buildttf $
+    master_ufo/../instance_ufo/Prata-Regular.ufo
+  fontmake_args = --filter ... --filter FlattenComponentsFilter --filter $
+      DecomposeTransformedComponentsFilter --output-path $
+      ../fonts/ttf/Prata-Regular.ttf
+
+# Post-processing ttfs
+build ../fonts/ttf/Prata-Regular.ttf.autohintstamp: autohint $
+    ../fonts/ttf/Prata-Regular.ttf
+build ../fonts/ttf/Prata-Regular.ttf.fixstamp: fix $
+    ../fonts/ttf/Prata-Regular.ttf | $
+    ../fonts/ttf/Prata-Regular.ttf.autohintstamp
+build ../fonts/webfonts/Prata-Regular.woff2: webfont $
+    ../fonts/ttf/Prata-Regular.ttf | ../fonts/ttf/Prata-Regular.ttf.fixstamp
+
